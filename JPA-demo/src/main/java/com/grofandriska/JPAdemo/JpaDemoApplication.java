@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class JpaDemoApplication {
@@ -17,12 +16,13 @@ public class JpaDemoApplication {
         SpringApplication.run(JpaDemoApplication.class, args);
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("pu");
         EntityManager em = factory.createEntityManager();
+
         em.getTransaction().begin();
         Employee employee = new Employee(null, "Bandi");
         em.persist(employee);
         em.getTransaction().commit();
-        System.out.println(employee.getId());
 
+        System.out.println(employee.getId());
         long id = employee.getId();
 
         employee = em.find(Employee.class, id);
@@ -46,6 +46,7 @@ public class JpaDemoApplication {
         System.out.println(employeeList);
 
         em.close();
+
         factory.close();
     }
 }
