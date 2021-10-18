@@ -9,7 +9,6 @@ import java.util.List;
 @Service
 public class EmpService {
 
-    @Autowired
     private Repo repo;
 
     public EmpService() {
