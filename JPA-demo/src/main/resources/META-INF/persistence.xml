@@ -3,15 +3,19 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
               http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-<persistence-unit name="pu"
-                  transaction-type="RESOURCE_LOCAL">
-    <properties>
-        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-        <property name="javax.persistence.jdbc.user" value="employees"/>
-        <property name="javax.persistence.jdbc.password" value="employees"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
-        <property name="hibernate.show_sql" value="true"/>
-        <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
-    </properties>
-</persistence-unit>
+    <persistence-unit name="pu"
+                      transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="employees"/>
+            <property name="javax.persistence.jdbc.password" value="employees"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- Séma  -->
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <!-- szkript beolvasása-->
+            <!--<property name="javax.persistence.schema-generation.scripts.create-target" value="file:///c:/" /> -->
+            <!--<property name="javax.persistence.schema-generation.scripts.action" value="create" /> -->
+        </properties>
+    </persistence-unit>
 </persistence>
