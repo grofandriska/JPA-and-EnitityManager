@@ -22,6 +22,9 @@ public class Employee {
     @Column(name = "emp_name", length = 200, nullable = false/*....*/)
     private String name;
 
+    @OneToOne
+    private ParkingPlace parkingPlace;
+
     @ElementCollection
     @CollectionTable(name = "nicknames", joinColumns = @JoinColumn(name = "emp_id"))
     @Column(name = "nickname")

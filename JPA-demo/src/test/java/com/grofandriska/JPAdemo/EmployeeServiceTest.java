@@ -112,6 +112,7 @@ public class EmployeeServiceTest {
         assertEquals("Nemo",modifiedEmployee.getName());
 
     }
+
     @Test
     public void testFlush() {
         for (int i = 0;i<11;i++){
@@ -120,6 +121,7 @@ public class EmployeeServiceTest {
         employeeDao.updateEmployeeList();
 
     }
+
     @Test
     public void nickname() {
         Employee employee = new Employee(null, "Nemo", Set.of("peti", "kati"));
@@ -129,6 +131,7 @@ public class EmployeeServiceTest {
         System.out.println(anotherEmployee.getNicknames());
         assertEquals(Set.of("peti", "kati"),anotherEmployee.getNicknames());
     }
+
     @Test
     public void nicknameByID() {
         Employee employee = new Employee(null, "Nemo", Set.of("peti", "kati"));
@@ -163,6 +166,7 @@ public class EmployeeServiceTest {
         assertEquals("2255",another.getPhoneNumbers().get("home"));
 
     }
+
 }
 
 
